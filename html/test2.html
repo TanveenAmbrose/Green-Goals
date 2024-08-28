@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Sidebar with Toggle Button</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/4b2e73686a.js" crossorigin="anonymous"></script>
+  <style>
+    .sidebar {
+      transition: transform 0.3s ease;
+      transform: translateX(-100%);
+      position: fixed;
+      height: 100vh;
+      width: 16rem;
+      top: 0;
+      left: 0;
+      z-index: 30;
+    }
+    .sidebar-visible {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <div class="relative flex">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar bg-[#0F1035] rounded-r-3xl">
+      <div class="p-4 flex justify-end">
+        <button id="sidebar-close" class="text-gray-300 focus:outline-none">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </button>
+      </div>
+      <nav class="flex flex-col h-full">
+        <div class="text-center flex-grow flex flex-col items-center justify-center">
+          <div class="w-full">
+            <img class="mx-auto w-24" src="/img/user-image.png" alt="" />
+          </div>
+          <p class="text-white font-semibold text-xl mb-10">Fahim Tahsan</p>
+          <a href="dashboard.html">
+            <button class="btn-ghost bg-[#DCF2F1] rounded-3xl w-56 hover:font-semibold text-black hover:bg-white hover:text-red-700 text-lg mb-5">
+              Dashboard
+            </button>
+          </a>
+          <a href="">
+            <button class="btn-ghost bg-[#DCF2F1] rounded-3xl w-56 hover:font-semibold text-black hover:bg-white hover:text-red-700 text-lg mb-5">
+              Learning
+            </button>
+          </a>
+          <a href="quiz.html">
+            <button class="btn-ghost bg-[#DCF2F1] rounded-3xl w-56 hover:font-semibold text-black hover:bg-white hover:text-red-700 text-lg mb-5">
+              Quiz
+            </button>
+          </a>
+          <a href="leaderboard.html">
+            <button class="btn-ghost bg-[#DCF2F1] rounded-3xl w-56 hover:font-semibold text-black hover:bg-white hover:text-red-700 text-lg mb-5">
+              Leader Board
+            </button>
+          </a>
+          <a href="">
+            <button class="btn-ghost bg-[#DCF2F1] rounded-3xl w-56 hover:font-semibold text-black hover:bg-white hover:text-red-700 text-lg mb-5">
+              Certificates
+            </button>
+          </a>
+          <a href="loging.html">
+            <button class="btn-ghost bg-[#DCF2F1] rounded-3xl w-56 hover:font-semibold text-black hover:bg-white hover:text-red-700 text-lg mb-5">
+              Logout
+            </button>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-4">
+      <button id="main-toggle" class="p-2 bg-[#DCF2F1] rounded-2xl focus:outline-none fixed top-4 left-4 z-10">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Your main content here -->
+      <div class="flex flex-col md:flex-row-reverse items-center md:justify-between">
+
+        <a href="dashboard.html" class="flex justify-end ">
+          <img class="w-52 md:w-64" src="/img/GreenGoals-logo.jpg" alt="" />
+        </a>
+        <h1 class="text-xl md:text-3xl font-bold text-[#0F1035] ml-2 md:ml-12">LEARNING</h1>
+      </div>
+
+
+
+      <!--videos part-->
+      <div class="p-10 flex flex-col md:flex-row">
+
+        <div class="md:flex w-2/3 md:justify-center">
+          <video class="w-4/5 rounded-2xl" controls src=""></video>
+        </div>
+
+
+        <div class=" border-4 rounded-2xl border-gray-300 md:flex w-1/3 ml-5 md:justify-center items-center shadow-2xl ">
+          <div class="bg-white shadow-md md:h-56 lg:h-60 xl:h-72 2xl:h-80">
+            <h2 class="text-xl text-center text-gray-500 font-bold mb-4">Suggested</h2>
+            <div class="h-3/4  overflow-auto p-4">
+              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p class="mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p class="mb-4">Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, vel ultrices magna dui quis urna.</p>
+              <p class="mb-4">Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+              <p class="mb-4">Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies. Nunc mi orci, facilisis non facilisis ut, vulputate ut eros. Curabitur euismod lacus sit amet nisi laoreet, et efficitur metus iaculis.</p>
+              <p class="mb-4">Suspendisse potenti. Ut et sollicitudin urna. Duis nec fringilla purus. Praesent dapibus magna sit amet velit sodales, ac posuere lectus bibendum. Integer dignissim risus nec libero pharetra, vitae facilisis nunc feugiat.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const sidebarToggle = document.getElementById("main-toggle");
+    const sidebar = document.getElementById("sidebar");
+    const sidebarClose = document.getElementById("sidebar-close");
+    const mainToggleIcon = document.getElementById("main-toggle-path");
+
+    function toggleSidebar() {
+      sidebar.classList.toggle("sidebar-visible");
+
+      if (sidebar.classList.contains("sidebar-visible")) {
+        mainToggleIcon.setAttribute("d", "M6 18L18 6M6 6l12 12"); // Close icon (X)
+      } else {
+        mainToggleIcon.setAttribute("d", "M4 6h16M4 12h16m-7 6h7"); // Hamburger icon
+      }
+    }
+
+    sidebarToggle.addEventListener("click", toggleSidebar);
+    sidebarClose.addEventListener("click", toggleSidebar);
+  </script>
+</body>
+</html>
