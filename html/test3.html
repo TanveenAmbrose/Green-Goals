@@ -21,7 +21,6 @@
     .sidebar-visible {
       transform: translateX(0);
     }
-    /* Styles for responsive video */
     .video-wrapper {
       position: relative;
       width: 100%;
@@ -37,6 +36,23 @@
       width: 100%;
       height: 100%;
       border: 0;
+    }
+    /* Height of the suggested section based on video height */
+    .video-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .suggested-section {
+      background-color: #fff;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border: 4px solid #e5e5e5;
+      height: var(--video-height, 200px); /* Default height if variable is not set */
+      max-height: 100vh; /* Ensure it doesn't exceed viewport height */
+      overflow-y: auto; /* Enable scrolling if content overflows */
+      display: flex;
+      flex-direction: column;
     }
   </style>
 </head>
@@ -96,7 +112,7 @@
       </button>
 
       <!-- Your main content here -->
-      <div class="flex flex-col md:flex-row-reverse items-center md:justify-between">
+      <div class="flex flex-col md:flex-row-reverse items-center md:justify-between ">
         <a href="dashboard.html" class="flex justify-end">
           <img class="w-52 md:w-64" src="/img/GreenGoals-logo.jpg" alt="" />
         </a>
@@ -106,8 +122,8 @@
       <!-- Videos part -->
       <div class="p-10 flex flex-col md:flex-row">
         <!-- Video Section -->
-        <div class="flex-1 md:w-2/3 mb-4 md:mb-0 flex justify-center bg-blue-300">
-          <div class="video-wrapper">
+        <div class="flex-1 md:w-2/3 mb-4 md:mb-0 flex justify-center video-section">
+          <div class="video-wrapper max-w-full lg:max-w-[782px]"> <!-- Adjust max-width here -->
             <iframe
               src="https://www.youtube.com/embed/C_ilgjxd_jk?si=E5GI4TepocnkApsK"
               title="YouTube video player"
@@ -121,19 +137,33 @@
 
         <!-- Suggested Section -->
         <div class="md:w-1/3 md:ml-5 flex justify-center">
-          <div class="bg-white shadow-md rounded-2xl border-4 border-gray-300 flex flex-col h-44 md:h-56 md:mt-5 lg:h-72 lg:mt-5 xl:h-80 2xl:h-80">
-            <h2 class="md:text-lg lg:text-xl text-md text-center text-gray-500 font-bold mb-4">Suggested</h2>
+          <div class="suggested-section">
+            <h2 class="text-lg text-center text-gray-500 font-bold mb-4">Suggested</h2>
             <div class="flex-1 overflow-auto p-4">
-              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <p class="mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p class="mb-4">Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, vel ultrices magna dui quis urna.</p>
-              <p class="mb-4">Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
-              <p class="mb-4">Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies. Nunc mi orci, facilisis non facilisis ut, vulputate ut eros. Curabitur euismod lacus sit amet nisi laoreet, et efficitur metus iaculis.</p>
-              <p class="mb-4">Suspendisse potenti. Ut et sollicitudin urna. Duis nec fringilla purus. Praesent dapibus magna sit amet velit sodales, ac posuere lectus bibendum. Integer dignissim risus nec libero pharetra, vitae facilisis nunc feugiat.</p>
-            </div>
+              <div class="flex pb-4">
+                <div class="flex-1 justify-center items-center"><a href=""><img src="/img/suggest-1.png" alt=""></a></div>
+                <div class="flex-1  justify-center items-center text-center"><a href=""><p class="lg:text-md text-sm font-semibold lg:mt-3">Health and Well-being for All: Exploring SDG 3</p></a></div>
+              </div>
+              <div class="flex pb-4">
+                <div class="flex-1 justify-center items-center"><a href=""><img src="/img/suggest-2.png" alt=""></a></div>
+                <div class="flex-1  justify-center items-center text-center"><a href=""><p class="lg:text-md text-sm font-semibold lg:mt-3">Education for Everyone: Why SDG 4 Matters</p></a></div>
+              </div>
+              <div class="flex pb-4">
+                <div class="flex-1 justify-center items-center"><a href=""><img src="/img/suggest-1.png" alt=""></a></div>
+                <div class="flex-1  justify-center items-center text-center"><a href=""><p class="lg:text-md text-sm font-semibold lg:mt-3">Health and Well-being for All: Exploring SDG 3</p></a></div>
+              </div>
+              <div class="flex pb-4">
+                <div class="flex-1 justify-center items-center"><a href=""><img src="/img/suggest-1.png" alt=""></a></div>
+                <div class="flex-1  justify-center items-center text-center"><a href=""><p class="lg:text-md text-sm font-semibold lg:mt-3">Health and Well-being for All: Exploring SDG 3</p></a></div>
+              </div>
+              <div class="flex pb-4">
+                <div class="flex-1 justify-center items-center"><a href=""><img src="/img/suggest-1.png" alt=""></a></div>
+                <div class="flex-1  justify-center items-center text-center"><a href=""><p class="lg:text-md text-sm font-semibold lg:mt-3">Health and Well-being for All: Exploring SDG 3</p></a></div>
+              </div>
           </div>
         </div>
       </div>
+
     </main>
   </div>
 
@@ -141,20 +171,28 @@
     const sidebarToggle = document.getElementById("main-toggle");
     const sidebar = document.getElementById("sidebar");
     const sidebarClose = document.getElementById("sidebar-close");
-    const mainToggleIcon = document.getElementById("main-toggle-path");
 
     function toggleSidebar() {
       sidebar.classList.toggle("sidebar-visible");
-
-      if (sidebar.classList.contains("sidebar-visible")) {
-        mainToggleIcon.setAttribute("d", "M6 18L18 6M6 6l12 12"); // Close icon (X)
-      } else {
-        mainToggleIcon.setAttribute("d", "M4 6h16M4 12h16m-7 6h7"); // Hamburger icon
-      }
     }
 
     sidebarToggle.addEventListener("click", toggleSidebar);
     sidebarClose.addEventListener("click", toggleSidebar);
+
+    window.addEventListener('load', () => {
+      updateSuggestedSectionHeight();
+    });
+
+    window.addEventListener('resize', () => {
+      updateSuggestedSectionHeight();
+    });
+
+    function updateSuggestedSectionHeight() {
+      const videoWrapper = document.querySelector('.video-wrapper');
+      const suggestedSection = document.querySelector('.suggested-section');
+      const videoHeight = videoWrapper.offsetHeight;
+      suggestedSection.style.setProperty('--video-height', `${videoHeight}px`);
+    }
   </script>
 </body>
 </html>
