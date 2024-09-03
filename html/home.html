@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Sidebar with Toggle Button</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/tailwind.css" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/4b2e73686a.js" crossorigin="anonymous"></script>
+  <!-- DaisyUI Carousel CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" />
+</head>
+<body>
+  <div class="relative flex">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar bg-[#0F1035] rounded-r-3xl fixed top-0 left-0 h-full z-10 w-64 p-4 transition-transform transform -translate-x-full md:hidden">
+      <div class="flex justify-end">
+        <button id="sidebar-close" class="text-gray-300 focus:outline-none">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </button>
+      </div>
+      <nav class="flex flex-col h-full">
+        <!-- Container buttons inside the sidebar -->
+        <div class="container flex flex-col items-center mt-4">
+          <p class="text-white font-bold hover:text-[#E84545] mb-4"><a href="">Home</a></p>
+          <p class="text-white font-bold hover:text-[#E84545] mb-4"><a href="">Community</a></p>
+          <p class="text-white font-bold hover:text-[#E84545] mb-4"><a href="">Innovations</a></p>
+          <p class="text-white font-bold hover:text-[#E84545] mb-4"><a href="/html/loging.html">Login</a></p>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-4">
+      <button id="main-toggle" class="p-2 bg-[#fafafa] rounded-2xl focus:outline-none fixed top-4 left-4 md:hidden">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Main content area -->
+      <div class="flex flex-col md:flex-row items-center md:justify-between">
+        <!-- Container buttons hidden on screens less than 768px -->
+        <div class="container justify-around hidden md:flex md:justify-around">
+          <p class="text-center flex justify-center items-center font-semibold hover:text-[#E84545]"><a href="">Home</a></p>
+          <p class="text-center flex justify-center items-center font-semibold hover:text-[#E84545]"><a href="">Community</a></p>
+          <p class="text-center flex justify-center items-center font-semibold hover:text-[#E84545]"><a href="">Innovations</a></p>
+          <button class="btn bg-[#7FC7D9] rounded-xl font-semibold "><a href="loging.html">Login</a></button>
+        </div>
+
+        <!-- Logo icon -->
+        <a href="dashboard.html" class="flex md:justify-end justify-center">
+          <img class="w-52 md:w-64" src="/img/GreenGoals-logo.jpg" alt="" />
+        </a>
+      </div>
+
+      <!-- Carousel part -->
+      <div class="container flex justify-center  mx-auto mt-8 shadow-black ">
+        <div class="carousel  w-4/5">
+          <div id="slide1" class="carousel-item relative w-full">
+            <img src="/img/carosel-1.png" class="w-full" alt="Slide 1" />
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+              <a href="#slide4" class="btn btn-circle glass">❮</a>
+              <a href="#slide2" class="btn btn-circle glass">❯</a>
+            </div>
+          </div>
+          <div id="slide2" class="carousel-item relative w-full">
+            <img src="/img/carosel-2.png" class="w-full" alt="Slide 2" />
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+              <a href="#slide1" class="btn btn-circle glass">❮</a>
+              <a href="#slide3" class="btn btn-circle glass">❯</a>
+            </div>
+          </div>
+          <div id="slide3" class="carousel-item relative w-full">
+            <img src="/img/carosel-3.png" class="w-full" alt="Slide 3" />
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+              <a href="#slide2" class="btn btn-circle glass">❮</a>
+              <a href="#slide4" class="btn btn-circle glass">❯</a>
+            </div>
+          </div>
+          <div id="slide4" class="carousel-item relative w-full">
+            <img src="/img/carosel-4.png" class="w-full" alt="Slide 4" />
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+              <a href="#slide3" class="btn btn-circle glass">❮</a>
+              <a href="#slide1" class="btn btn-circle glass">❯</a>
+            </div>
+          </div>
+          <div id="slide5" class="carousel-item relative w-full">
+            <img src="/img/carosel-5.png" class="w-full" alt="Slide 4" />
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+              <a href="#slide4" class="btn btn-circle glass">❮</a>
+              <a href="#slide6" class="btn btn-circle glass">❯</a>
+            </div>
+          </div>
+          <div id="slide6" class="carousel-item relative w-full">
+            <img src="/img/carosel-6.png" class="w-full" alt="Slide 4" />
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+              <a href="#slide5" class="btn btn-circle glass">❮</a>
+              <a href="#slide1" class="btn btn-circle glass">❯</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Toggle Sidebar Visibility
+    const sidebarToggle = document.getElementById("main-toggle");
+    const sidebar = document.getElementById("sidebar");
+    const sidebarClose = document.getElementById("sidebar-close");
+
+    function toggleSidebar() {
+      sidebar.classList.toggle("translate-x-0");
+      sidebar.classList.toggle("-translate-x-full");
+    }
+
+    sidebarToggle.addEventListener("click", toggleSidebar);
+    sidebarClose.addEventListener("click", toggleSidebar);
+
+    // Automatic Carousel Functionality
+    const slides = document.querySelectorAll('.carousel-item');
+    let currentSlide = 0;
+    const slideInterval = 3000; // Change slide every 3 seconds
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('block', i === index);
+        slide.classList.toggle('hidden', i !== index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    document.querySelectorAll('.btn-circle').forEach(btn => {
+      btn.addEventListener('click', (event) => {
+        if (event.target.innerText === '❮') {
+          prevSlide();
+        } else {
+          nextSlide();
+        }
+      });
+    });
+
+    // Set initial slide
+    showSlide(currentSlide);
+
+    // Start automatic sliding
+    setInterval(nextSlide, slideInterval);
+
+  </script>
+</body>
+</html>
