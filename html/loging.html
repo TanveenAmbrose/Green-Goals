@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
     <title>Green-Goals</title>
 
     <!-- Inline CSS for Styling -->
@@ -52,15 +53,7 @@
             font-size: 12px;
         }
 
-        .container a {
-            color: #333;
-            font-size: 13px;
-            text-decoration: none;
-            margin: 15px 0 10px;
-            display: block;
-        }
-
-        .container button {
+        .container .sign-up-btn, .sign-in-btn, .log-in-btn {
             background-color: #365486;
             color: #fff;
             font-size: 12px;
@@ -261,7 +254,7 @@
                 <input type="text" placeholder="Name">
                 <input type="email" placeholder="Email">
                 <input type="password" placeholder="Password">
-                <button>Sign Up</button>
+                <button class="sign-up-btn">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in">
@@ -269,8 +262,13 @@
                 <h1>Log In</h1>
                 <input type="email" placeholder="Email">
                 <input type="password" placeholder="Password">
-                <a href="#">Forget Your Password?</a>
-                <a href="../html/dashboard.html"><button>Log In</button></a>
+                <a href="#" style="color: #333;
+                font-size: 13px;
+                text-decoration: none;
+                margin: 15px 0 10px;
+                display: block;
+            ">Forget Your Password?</a>
+                <a href="dashboard.html"><button class="log-in-btn">Log In</button></a>
             </form>
         </div>
         <div class="toggle-container">
@@ -278,12 +276,12 @@
                 <div class="toggle-panel toggle-left">
                     <h1>Welcome To <br> Green-Goals</h1>
                     <p>Enter your personal details to use all of site features</p>
-                    <button class="hidden" id="login">Sign In</button>
+                    <button class="hidden sign-in-btn" id="login">Sign In</button>
                 </div>
                 <div class="toggle-panel toggle-right">
                     <h1>Hello, Friend!</h1>
                     <p>Register with your personal details to use all of site features</p>
-                    <button class="hidden" id="register">Sign Up</button>
+                    <button class="hidden sign-up-btn" id="register">Sign Up</button>
                 </div>
             </div>
         </div>
@@ -303,6 +301,7 @@
             container.classList.remove("active");
         });
     </script>
+    
 </body>
 
 </html>
